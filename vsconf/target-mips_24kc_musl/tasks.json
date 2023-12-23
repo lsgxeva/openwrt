@@ -1,0 +1,51 @@
+{
+    "command": "bash",
+    "args": [
+        "-c"
+    ],
+    "options": {
+        "cwd": "${workspaceFolder}"
+    },
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build: package compile",
+            "args": [
+                "make package/${workspaceRootFolderName}/compile V=s"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/../../../"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "build: make package compile"
+        },
+        {
+            "type": "shell",
+            "label": "build: package clean",
+            "args": [
+                "make package/${workspaceRootFolderName}/clean V=s"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/../../../"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "build: make package clean"
+        },
+        {
+            "type": "shell",
+            "label": "build: copy target",
+            "args": [
+                "sshpass -p admin scp build_dir/target-mips_24kc_musl/${workspaceRootFolderName}/${workspaceRootFolderName} root@192.168.11.1:/tmp/"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/../../../"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "build: copy package to target"
+        }
+    ],
+    "version": "2.0.0"
+}

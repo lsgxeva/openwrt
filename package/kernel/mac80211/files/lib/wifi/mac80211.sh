@@ -196,6 +196,11 @@ detect_mac80211() {
 				;;
 		esac
 
+		local mac_addr="$(awk -F ':' '{print toupper($5$6)}' "/sys/class/ieee80211/${dev}/macaddress")"
+		local ssid="LWrt_${mac_addr}"
+		local enc="psk2"
+		local key="12345678"
+
 		uci -q batch <<-EOF
 			set wireless.${name}=wifi-device
 			set wireless.${name}.type=mac80211
@@ -203,14 +208,15 @@ detect_mac80211() {
 			set wireless.${name}.channel=${channel}
 			set wireless.${name}.band=${mode_band}
 			set wireless.${name}.htmode=$htmode
-			set wireless.${name}.disabled=1
+			set wireless.${name}.country=CN
 
 			set wireless.default_${name}=wifi-iface
 			set wireless.default_${name}.device=${name}
 			set wireless.default_${name}.network=lan
 			set wireless.default_${name}.mode=ap
-			set wireless.default_${name}.ssid=OpenWrt
-			set wireless.default_${name}.encryption=none
+			set wireless.default_${name}.ssid=${ssid}
+			set wireless.default_${name}.encryption=${enc}
+			set wireless.default_${name}.key=${key}
 EOF
 		uci -q commit wireless
 	done

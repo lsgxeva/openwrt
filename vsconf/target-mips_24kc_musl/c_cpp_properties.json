@@ -1,0 +1,42 @@
+{
+    "env": {
+        "myDefaultIncludePath": [
+            "${workspaceFolder}/src",
+            "${workspaceFolder}/src/include",
+            "${workspaceFolder}/../../../staging_dir/target-mips_24kc_musl/usr/include",
+            "${workspaceFolder}/../../../staging_dir/target-mips_24kc_musl/include",
+            "${workspaceFolder}/../../../staging_dir/toolchain-mips_24kc_gcc-12.3.0_musl/usr/include",
+            "${workspaceFolder}/../../../staging_dir/toolchain-mips_24kc_gcc-12.3.0_musl/include/fortify",
+            "${workspaceFolder}/../../../staging_dir/toolchain-mips_24kc_gcc-12.3.0_musl/include"
+        ],
+        "myCompilerPath": "${workspaceFolder}/../../../staging_dir/toolchain-mips_24kc_gcc-12.3.0_musl/bin/mips-openwrt-linux-musl-gcc"
+    },
+    "configurations": [
+        {
+            "name": "openwrt",
+            "includePath": [
+                "${env:myDefaultIncludePath}"
+            ],
+            "defines": [
+                "_SYSLOG",
+                "DEBUG",
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__BYTE_ORDER=__BIG_ENDIAN",
+                "_FORTIFY_SOURCE=1",
+                "CHECK_PTHREAD_RETURN_VALUE"
+            ],
+            "compilerPath": "${env:myCompilerPath}",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-gcc-x64",
+            "browse": {
+                "path": ["${env:myDefaultIncludePath}"],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}
