@@ -21,7 +21,7 @@ define Package/default-settings
 endef
 
 define Package/default-settings/description
-        LuCI support for Default Settings.
+  LuCI support for Default Settings.
 endef
 
 define Build/Compile

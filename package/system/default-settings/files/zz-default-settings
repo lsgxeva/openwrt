@@ -1,48 +1,52 @@
 #!/bin/sh
 
-uci -q batch <<-EOF >/dev/null
-	delete network.tailscale
-	add network interface
-	rename network.@interface[-1]='tailscale'
-	set network.@interface[-1]=interface
-	set network.@interface[-1].proto=none
-	set network.@interface[-1].device=tailscale0
-	commit network
-EOF
+################################################
 
-uci -q batch <<-EOF >/dev/null
-	add firewall zone
-	set firewall.@zone[-1]=zone
-	set firewall.@zone[-1].name=tailscale
-	set firewall.@zone[-1].input=ACCEPT
-	set firewall.@zone[-1].output=ACCEPT
-	set firewall.@zone[-1].forward=ACCEPT
-	set firewall.@zone[-1].masq=1
-	set firewall.@zone[-1].mtu_fix=1
-	set firewall.@zone[-1].network=tailscale
-	commit firewall
-EOF
+# uci -q batch <<-EOF >/dev/null
+# 	delete network.tailscale
+# 	add network interface
+# 	rename network.@interface[-1]='tailscale'
+# 	set network.@interface[-1]=interface
+# 	set network.@interface[-1].proto=none
+# 	set network.@interface[-1].device=tailscale0
+# 	commit network
+# EOF
 
-uci -q batch <<-EOF >/dev/null
-	add firewall forwarding
-	set firewall.@forwarding[-1].src=tailscale
-	set firewall.@forwarding[-1].dest=wan
-	commit firewall
-EOF
+# uci -q batch <<-EOF >/dev/null
+# 	add firewall zone
+# 	set firewall.@zone[-1]=zone
+# 	set firewall.@zone[-1].name=tailscale
+# 	set firewall.@zone[-1].input=ACCEPT
+# 	set firewall.@zone[-1].output=ACCEPT
+# 	set firewall.@zone[-1].forward=ACCEPT
+# 	set firewall.@zone[-1].masq=1
+# 	set firewall.@zone[-1].mtu_fix=1
+# 	set firewall.@zone[-1].network=tailscale
+# 	commit firewall
+# EOF
 
-uci -q batch <<-EOF >/dev/null
-	add firewall forwarding
-	set firewall.@forwarding[-1].src=lan
-	set firewall.@forwarding[-1].dest=tailscale
-	commit firewall
-EOF
+# uci -q batch <<-EOF >/dev/null
+# 	add firewall forwarding
+# 	set firewall.@forwarding[-1].src=tailscale
+# 	set firewall.@forwarding[-1].dest=wan
+# 	commit firewall
+# EOF
 
-uci -q batch <<-EOF >/dev/null
-	add firewall forwarding
-	set firewall.@forwarding[-1].src=tailscale
-	set firewall.@forwarding[-1].dest=lan
-	commit firewall
-EOF
+# uci -q batch <<-EOF >/dev/null
+# 	add firewall forwarding
+# 	set firewall.@forwarding[-1].src=lan
+# 	set firewall.@forwarding[-1].dest=tailscale
+# 	commit firewall
+# EOF
+
+# uci -q batch <<-EOF >/dev/null
+# 	add firewall forwarding
+# 	set firewall.@forwarding[-1].src=tailscale
+# 	set firewall.@forwarding[-1].dest=lan
+# 	commit firewall
+# EOF
+
+################################################
 
 uci -q batch <<-EOF >/dev/null
 	delete firewall.ssh
