@@ -1,0 +1,13 @@
+{
+	"admin/services/checknet": {
+		"title": "checknet",
+		"action": {
+			"type": "view",
+			"path": "checknet"
+		},
+		"depends": {
+			"acl": [ "luci-app-checknet" ],
+			"uci": { "checknet": true }
+		}
+	}
+}

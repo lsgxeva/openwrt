@@ -1,0 +1,13 @@
+{
+	"admin/services/mgmtlanip": {
+		"title": "mgmtlanip",
+		"action": {
+			"type": "view",
+			"path": "mgmtlanip"
+		},
+		"depends": {
+			"acl": [ "luci-app-mgmtlanip" ],
+			"uci": { "mgmtlanip": true }
+		}
+	}
+}
