@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-06-24 10:23+0000\n"
+"Last-Translator: lsgx <lsgx@live.com>\n"
+"Language-Team: English <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationschecknet/en/>\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.1-dev\n"
+
+#: applications/luci-app-checknet/root/usr/share/rpcd/acl.d/luci-app-checknet.json:3
+msgid "Grant UCI access for luci-app-checknet"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:99
+msgid "LTE2 AT ttyUSB Device"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:95
+msgid "LTE1 AT ttyUSB Device"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:91
+msgid "China Telecom Dial APN"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:87
+msgid "China Unicom Dial APN"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:83
+msgid "China Mobile Dial APN"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:79
+msgid "LTE Modem Dial Proc"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:75
+msgid "LTE2 Modem Device Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:71
+msgid "LTE1 Modem Device Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:67
+msgid "LTE2 Ping IP"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:63
+msgid "LTE1 Ping IP"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:59
+msgid "Wan Ping IP"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:55
+msgid "LTE2 Interface Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:51
+msgid "LTE1 Interface Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:47
+msgid "Wan Interface Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:43
+msgid "LTE2 Firewall Zone Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:39
+msgid "LTE1 Firewall Zone Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:35
+msgid "Wan Firewall Zone Name"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:31
+msgid "Log Enabled"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:27
+msgid "Respawn"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:22
+msgid "Cycle Second"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:16
+msgid "Enabled"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:12
+#: applications/luci-app-checknet/root/usr/share/luci/menu.d/luci-app-checknet.json:3
+msgid "checknet"
+msgstr ""
+
+#: applications/luci-app-checknet/htdocs/luci-static/resources/view/checknet.js:10
+msgid ""
+"checknet is a Double LTE Checknet Script daemon, here you can configure the settings."
+msgstr ""

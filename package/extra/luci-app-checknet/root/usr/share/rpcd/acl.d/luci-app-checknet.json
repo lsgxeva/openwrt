@@ -1,0 +1,11 @@
+{
+	"luci-app-checknet": {
+		"description": "Grant UCI access for luci-app-checknet",
+		"read": {
+			"uci": [ "checknet" ]
+		},
+		"write": {
+			"uci": [ "checknet" ]
+		}
+	}
+}

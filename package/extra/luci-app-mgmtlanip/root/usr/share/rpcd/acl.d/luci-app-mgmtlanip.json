@@ -1,0 +1,11 @@
+{
+	"luci-app-mgmtlanip": {
+		"description": "Grant UCI access for luci-app-mgmtlanip",
+		"read": {
+			"uci": [ "mgmtlanip" ]
+		},
+		"write": {
+			"uci": [ "mgmtlanip" ]
+		}
+	}
+}

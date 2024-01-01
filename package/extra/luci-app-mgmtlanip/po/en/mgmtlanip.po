@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-06-24 10:23+0000\n"
+"Last-Translator: lsgx <lsgx@live.com>\n"
+"Language-Team: English <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsmgmtlanip/en/>\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.1-dev\n"
+
+#: applications/luci-app-mgmtlanip/root/usr/share/rpcd/acl.d/luci-app-mgmtlanip.json:3
+msgid "Grant UCI access for luci-app-mgmtlanip"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:59
+msgid "IPv4 wan Netmask"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:55
+msgid "IPv4 wan Address"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:51
+msgid "Interface wan Index"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:47
+msgid "Interface wan Name"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:43
+msgid "IPv4 br Netmask"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:39
+msgid "IPv4 br Address"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:35
+msgid "Interface br Index"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:31
+msgid "Interface br Name"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:27
+msgid "Respawn"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:22
+msgid "Cycle Second"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:16
+msgid "Enabled"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:12
+#: applications/luci-app-mgmtlanip/root/usr/share/luci/menu.d/luci-app-mgmtlanip.json:3
+msgid "mgmtlanip"
+msgstr ""
+
+#: applications/luci-app-mgmtlanip/htdocs/luci-static/resources/view/mgmtlanip.js:10
+msgid ""
+"mgmtlanip is a Mgmt LanIP Script daemon, here you can configure the settings."
+msgstr ""
