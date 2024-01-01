@@ -6,31 +6,44 @@ START=80
 USE_PROCD=1
 PROG=/usr/sbin/ugps
 
-service_triggers() {
-	procd_add_reload_trigger gps
+config_get_sane()
+{
+	config_get "$@"
+	set -- "$(echo "$1" | tr -d '<>[]{};%?=#\n')"
 }
 
-start_service() {
-	local tty="$(uci get gps.@gps[-1].tty)"
-	local atime="$(uci get gps.@gps[-1].adjust_time)"
-	local disabled="$(uci get gps.@gps[-1].disabled || echo 0)"
+start_instance()
+{
+	local cfg="$1"
+	local disabled tty atime brate
 
-	[ "$disabled" == "0" ] || return
-	[ "$tty" ] || return
+	config_get_bool disabled "$cfg" 'disabled' '0'
+	[ "$disabled" == "1" ] && return
 
-	case "$tty" in
-		"/"*)
-			true
-			;;
-		*)
-			tty="/dev/$tty"
-			;;
-	esac
+	config_get_sane tty "$cfg" 'tty' 'ttyACM0'
+	[ ! -c /dev/$tty ] && return
 
 	procd_open_instance
-	procd_set_param command "$PROG"
-	[ "$atime" -eq 0 ] || procd_append_param command "-a"
-	procd_append_param command "$tty"
+	procd_set_param command $PROG
+	config_get_bool atime "$cfg" 'adjust_time' '0'
+	[ "$atime" == "1" ] && procd_append_param command "-a"
+	config_get_sane brate "$cfg" 'baud_rate' '9600'
+	[ "$brate" == "0" ] && brate="9600"
+	procd_append_param command "-b" "$brate"
+	procd_append_param command "/dev/$tty"
 	procd_set_param respawn
+	echo "ugps service has started."
 	procd_close_instance
+}
+
+
+service_triggers()
+{
+	procd_add_reload_trigger "gps"
+}
+
+start_service() 
+{
+	config_load gps
+	config_foreach start_instance gps
 }

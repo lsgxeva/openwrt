@@ -1,0 +1,13 @@
+{
+	"admin/services/ugps": {
+		"title": "ugps",
+		"action": {
+			"type": "view",
+			"path": "ugps"
+		},
+		"depends": {
+			"acl": [ "luci-app-ugps" ],
+			"uci": { "gps": true }
+		}
+	}
+}

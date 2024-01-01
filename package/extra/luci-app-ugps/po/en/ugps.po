@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-06-24 10:23+0000\n"
+"Last-Translator: lsgx <lsgx@live.com>\n"
+"Language-Team: English <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsugps/en/>\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.1-dev\n"
+
+#: applications/luci-app-ugps/root/usr/share/rpcd/acl.d/luci-app-ugps.json:3
+msgid "Grant UCI access for luci-app-ugps"
+msgstr ""
+
+#: applications/luci-app-ugps/htdocs/luci-static/resources/view/ugps.js:30
+msgid "Baud Rate"
+msgstr ""
+
+#: applications/luci-app-ugps/htdocs/luci-static/resources/view/ugps.js:26
+msgid "Adjust Time"
+msgstr ""
+
+#: applications/luci-app-ugps/htdocs/luci-static/resources/view/ugps.js:22
+msgid "Device Name"
+msgstr ""
+
+#: applications/luci-app-ugps/htdocs/luci-static/resources/view/ugps.js:16
+msgid "Enabled"
+msgstr ""
+
+#: applications/luci-app-ugps/htdocs/luci-static/resources/view/ugps.js:12
+msgid "gps"
+msgstr ""
+
+#: applications/luci-app-ugps/root/usr/share/luci/menu.d/luci-app-ugps.json:3
+msgid "ugps"
+msgstr ""
+
+#: applications/luci-app-ugps/htdocs/luci-static/resources/view/ugps.js:10
+msgid ""
+"ugps is a gps program daemon, here you can configure the settings."
+msgstr ""

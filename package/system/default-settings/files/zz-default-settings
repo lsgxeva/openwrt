@@ -2,6 +2,40 @@
 
 ################################################
 
+touch '/etc/crontabs/root'
+/etc/init.d/cron enable
+/etc/init.d/cron restart
+
+################################################
+
+uci -q batch <<-EOF >/dev/null
+	delete firewall.ssh
+	add firewall rule
+	rename firewall.@rule[-1]="ssh"
+	set firewall.@rule[-1].name="ssh"
+	set firewall.@rule[-1].target="ACCEPT"
+	set firewall.@rule[-1].src="wan"
+	set firewall.@rule[-1].proto="tcp"
+	set firewall.@rule[-1].dest_port="22 2222"
+	set firewall.@rule[-1].enabled="1"
+	commit firewall
+EOF
+
+uci -q batch <<-EOF >/dev/null
+	delete firewall.webgui
+	add firewall rule
+	rename firewall.@rule[-1]="webgui"
+	set firewall.@rule[-1].name="webgui"
+	set firewall.@rule[-1].target="ACCEPT"
+	set firewall.@rule[-1].src="wan"
+	set firewall.@rule[-1].proto="tcp"
+	set firewall.@rule[-1].dest_port="80 443 8000 8080 8443"
+	set firewall.@rule[-1].enabled="1"
+	commit firewall
+EOF
+
+################################################
+
 # uci -q batch <<-EOF >/dev/null
 # 	delete network.tailscale
 # 	add network interface
@@ -48,33 +82,41 @@
 
 ################################################
 
-uci -q batch <<-EOF >/dev/null
-	delete firewall.ssh
-	add firewall rule
-	rename firewall.@rule[-1]="ssh"
-	set firewall.@rule[-1].name="ssh"
-	set firewall.@rule[-1].target="ACCEPT"
-	set firewall.@rule[-1].src="wan"
-	set firewall.@rule[-1].proto="tcp"
-	set firewall.@rule[-1].dest_port="22 2222"
-	set firewall.@rule[-1].enabled="0"
-	commit firewall
-EOF
+# uci -q batch <<-EOF >/dev/null
+# 	add luci command
+# 	set luci.@command[-1].name='cfglte'
+# 	set luci.@command[-1].command='/usr/bin/cfglte'
+# 	set luci.@command[-1].public='1'
+# 	commit luci
+# EOF
 
-uci -q batch <<-EOF >/dev/null
-	delete firewall.webgui
-	add firewall rule
-	rename firewall.@rule[-1]="webgui"
-	set firewall.@rule[-1].name="webgui"
-	set firewall.@rule[-1].target="ACCEPT"
-	set firewall.@rule[-1].src="wan"
-	set firewall.@rule[-1].proto="tcp"
-	set firewall.@rule[-1].dest_port="80 443 8000 8080 8443"
-	set firewall.@rule[-1].enabled="0"
-	commit firewall
-EOF
+# uci -q batch <<-EOF >/dev/null
+# 	add luci command
+# 	set luci.@command[-1].name='getmwan'
+# 	set luci.@command[-1].command='/usr/bin/getmwan'
+# 	set luci.@command[-1].public='1'
+# 	commit luci
+# EOF
 
-rm -rf /tmp/luci-modulecache/
-rm -f /tmp/luci-indexcache
+################################################
+
+# sleep 1
+# /etc/init.d/network restart >/dev/null 2>&1
+# sleep 1
+# /etc/init.d/firewall restart >/dev/null 2>&1
+# sleep 1
+# /etc/init.d/dnsmasq restart >/dev/null 2>&1
+# sleep 1
+# /etc/init.d/mwan3 restart >/dev/null 2>&1
+# sleep 1
+# /etc/init.d/checknet restart >/dev/null 2>&1
+# sleep 1
+
+################################################
+
+[ -d "/tmp/luci-modulecache" ] && rm -rf /tmp/luci-modulecache
+[ -f "/tmp/luci-indexcache" ] && rm -f /tmp/luci-indexcache
+
+################################################
 
 exit 0
